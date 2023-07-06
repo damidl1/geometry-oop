@@ -15,4 +15,24 @@ class Triangle{
 
    }
 
+ // area triangolo di test = 6
+   // calcolare area con formula di erone
+ 
+ get Area(){
+
+    
+
+   }
+
+
+   // verificare se triangolo è rettangolo
+
+   isRectangle(){
+
+    
+
+   }
+
 }
+
+
