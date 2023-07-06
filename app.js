@@ -26,6 +26,12 @@ const employee1 = new Employee('pluto', 'de pippis', 'animali');
 
 console.log(employee1.toString());
 
+console.log(triangle1.area);
+
+console.log(triangle1.segmentAB.length);
+console.log(triangle1.segmentBC.length)
+console.log(triangle1.segmentCA.length)
+
 
 
 // scrivere tutti i dati della classe con to string ad es const s1 = {name: 'manuela', surname: 'ariotti'}
@@ -43,4 +49,7 @@ console.log(employee1.toString());
                 // cesare falzone      
                 // coppia 2
                 // luca verduci
-                // stefano florio                                      
+                // stefano florio      
+                
+                
+                console.log(triangle1.isRectangle());
