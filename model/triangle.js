@@ -14,50 +14,66 @@ class Triangle {
   // area triangolo di test = 6
   // calcolare area con formula di erone
 
-  get area() {
-    const p = this.perimeter / 2;
-    const pLessA = p - this.segmentAB.length;
-    const pLessB = p - this.segmentBC.length;
-    const pLessC = p - this.segmentCA.length;
+  // get area() {
+  //   const p = this.perimeter / 2;
+  //   const pLessA = p - this.segmentAB.length;
+  //   const pLessB = p - this.segmentBC.length;
+  //   const pLessC = p - this.segmentCA.length;
 
-    const multiplyPByAll = p * pLessA * pLessB * pLessC;
-    const area = Math.sqrt(multiplyPByAll);
+  //   const multiplyPByAll = p * pLessA * pLessB * pLessC;
+  //   const area = Math.sqrt(multiplyPByAll);
+
+  //   return area;
+  // }
+
+
+  //Versione aula --------------------------------------------
+
+
+  get area() {
+    const halfPerimeter = this.perimeter / 2;
+    const hPMinusAB = halfPerimeter - this.segmentAB.length;
+    const hPMinusBC = halfPerimeter - this.segmentBC.length;
+    const hPMinusCA = halfPerimeter - this.segmentCA.length;
+    const  area = Math.sqrt(halfPerimeter * hPMinusAB * hPMinusBC * hPMinusCA);
 
     return area;
   }
 
+
+
+
+
+
   // verificare se triangolo è rettangolo questo lato al quadrato è uguale alla somma degli altri due lati al quadrato? se si è rettangolo
 
+  // isRectangle() {
+  //     if (this.segmentAB.length **2 === this.segmentBC.length ** 2 + this.segmentCA.length ** 2) {     
+  //       return true;
+  //     } 
+  //     if (this.segmentBC.length **2 === this.segmentAB.length ** 2 + this.segmentCA.length ** 2) {
+  //       return true;
+  //     }
+  //     if (this.segmentCA.length **2 === this.segmentAB.length ** 2 + this.segmentBC.length ** 2) {
+  //       return true;
+  //     }
+  //     return false;
+  //   }
+
+
+
+
+  // Altra versione ----------------------------
+
   isRectangle() {
-    const segmentA = this.segmentAB.length;
-    const segmentB = this.segmentBC.length;
-    const segmentC = this.segmentCA.length;
+    const isHypotenuseAB = this.segmentAB.length **2 === this.segmentBC.length ** 2 + this.segmentCA.length ** 2;
+    const isHypotenuseBC = this.segmentBC.length **2 === this.segmentAB.length ** 2 + this.segmentCA.length ** 2;
+    const isHypotenuseCA = this.segmentCA.length **2 === this.segmentAB.length ** 2 + this.segmentBC.length ** 2;
 
-    const triangleArray = [segmentA, segmentB, segmentC];
-
-
-
-
-    for (let i = 0; i < triangleArray.length; i++) {
-      const element = triangleArray[i];
-      if (Math.pow(element) === Math.pow(element[i+1] + Math.pow(element[i+2]))) {
-        return true;
-      
-      }
-      return false;
+    if (isHypotenuseAB || isHypotenuseBC || isHypotenuseCA) {
+      return true;
     }
-
-    // const powOfAB = Math.pow(this.segmentAB.length);
-    // const powOfBC = Math.pow(this.segmentBC.length);
-    // const powOfCA = Math.pow(this.segmentCA.length);
-
-    // if (powOfAB === powOfBC + powOfCA) {
-    //   return true;
-    // } else if (powOfBC === powOfAB + powOfCA) {
-    //   return true;
-    // } else if (powOfCA === powOfAB + powOfBC) {
-    //   return true;
-    // }
-    // return false;
+     return false;
+    }
   }
-}
+

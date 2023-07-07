@@ -21,8 +21,8 @@ class Segment{
 
   get length(){
 
-    const deltaX = this.pointA.x - this.pointB.x;
-    const deltaY = this.pointA.y - this.pointB.y;
+    const deltaX = this.pointA.x - this.pointB.x;   //AC
+    const deltaY = this.pointA.y - this.pointB.y;   //BC
 
     const length = Math.sqrt(deltaX ** 2 + deltaY ** 2);
     

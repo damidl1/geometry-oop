@@ -26,11 +26,11 @@ const employee1 = new Employee('pluto', 'de pippis', 'animali');
 
 console.log(employee1.toString());
 
-console.log(triangle1.area);
 
-console.log(triangle1.segmentAB.length);
-console.log(triangle1.segmentBC.length)
-console.log(triangle1.segmentCA.length)
+
+// console.log(triangle1.segmentAB.length);
+// console.log(triangle1.segmentBC.length)
+// console.log(triangle1.segmentCA.length)
 
 
 
@@ -51,5 +51,5 @@ console.log(triangle1.segmentCA.length)
                 // luca verduci
                 // stefano florio      
                 
-                
-                console.log(triangle1.isRectangle());
+console.log(triangle1.area);                
+console.log(triangle1.isRectangle());             
